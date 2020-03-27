@@ -8,6 +8,7 @@ export class HandledError extends Error {
     constructor(type: ErrorType, message: string, status?: number) {
         super(message);
         this.type = type;
+        this.message = message;
         this.status = status;
     }
 }

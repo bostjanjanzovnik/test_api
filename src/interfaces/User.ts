@@ -1,9 +1,12 @@
+import { Post } from './Post';
+
 export interface User {
     id: string,
     name: string,
     surname: string,
     dateOfBirth: string,
-    createdOn: string
+    createdOn: string,
+    posts?: Post[]
 }
 
 export interface CreateUserRequest {

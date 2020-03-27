@@ -1,9 +1,9 @@
 import ElasticSearch from '../elasticsearch/ElasticSearch';
 
 export class Repository {
-    public readonly index?: string = undefined;
+    public readonly index: string = '';
 
-    public readonly mapping?: object = undefined;
+    public readonly mapping: object | undefined = undefined;
 
     async getAll<T>(query?: object): Promise<T[]> {
         const result = await ElasticSearch.client.search<T>({

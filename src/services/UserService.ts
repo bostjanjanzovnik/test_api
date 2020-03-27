@@ -3,6 +3,7 @@ import { CreateUserRequest, UpdateUserRequest, User } from '../interfaces/User';
 import UserRepository from '../repositories/UserRepository';
 import { HandledError } from '../errors/HandledError';
 import { ErrorType } from '../interfaces/HandledError';
+import PostService from './PostService';
 
 class UserService {
     async index(): Promise<User[]> {
@@ -26,6 +27,8 @@ class UserService {
             throw new HandledError(ErrorType.ResourceNotFound, 'User not found.', 404);
         }
 
+        result.posts = await PostService.getByUserId(result.id);
+
         return result;
     }
 
@@ -47,10 +50,6 @@ class UserService {
 
     async update(id: string, userData: UpdateUserRequest): Promise<User> {
         let user = await this.get(id);
-
-        if (!user) {
-            throw new HandledError(ErrorType.ResourceNotFound, 'User not found.', 404);
-        }
 
         try {
             user.name = userData.name ?? user.name;

@@ -1,4 +1,5 @@
 import UserRepository from '../repositories/UserRepository';
+import PostRepository from '../repositories/PostRepository';
 
 interface Indices {
     index?: string,
@@ -13,6 +14,10 @@ export default class ElasticSearchIndices {
             {
                 index: UserRepository.index,
                 mapping: UserRepository.mapping
+            },
+            {
+                index: PostRepository.index,
+                mapping: PostRepository.mapping
             }
         ];
     }
