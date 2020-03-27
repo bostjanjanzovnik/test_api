@@ -7,17 +7,17 @@ import PostRepository from '../repositories/PostRepository';
 
 class PostService {
     async getByUserId(userId: string): Promise<Post[]> {
-        try {
-            const query: any = {
-                query: {
-                    match_phrase: {
-                        userId: {
-                            query: userId
-                        },
+        const query: any = {
+            query: {
+                match_phrase: {
+                    userId: {
+                        query: userId
                     },
                 },
-            };
+            },
+        };
 
+        try {
             return PostRepository.getAll(query);
         } catch (e) {
             throw new HandledError(ErrorType.Database, 'Failed to retrieve data.');
@@ -47,12 +47,6 @@ class PostService {
     }
 
     async delete(id: string): Promise<void> {
-        const post = await PostRepository.get(id);
-
-        if (!post) {
-            throw new HandledError(ErrorType.ResourceNotFound, 'Post not found.', 404);
-        }
-
         try {
             return PostRepository.delete(id);
         } catch (e) {

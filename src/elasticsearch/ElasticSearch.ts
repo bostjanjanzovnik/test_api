@@ -1,10 +1,8 @@
-import elasticsearch, { IndicesPutMappingParams } from 'elasticsearch';
+import elasticsearch from 'elasticsearch';
+import { IndexConfig, PutMappings } from '../interfaces/ElasticSearch';
 import Config from '../config/Config';
-import ElasticSearchIndices from '../config/ElasticSearchIndices';
-
-export interface PutMappings extends IndicesPutMappingParams {
-    include_type_name?: boolean;
-}
+import UserRepository from '../repositories/UserRepository';
+import PostRepository from '../repositories/PostRepository';
 
 class ElasticSearch {
     public readonly client = new elasticsearch.Client({
@@ -13,30 +11,39 @@ class ElasticSearch {
     });
 
     async createIndices(): Promise<void> {
-        const indices = new ElasticSearchIndices();
+        const indicesConfig = this.getIndicesConfig();
 
-        for (const index of indices.indices) {
-            if (index.index) {
-                const indexExists = await this.client.indices.exists({ index: index.index });
+        for (const index of indicesConfig) {
+            const indexExists = await this.client.indices.exists({ index: index.index });
 
-                if (!indexExists) {
-                    await this.client.indices.create({ index: index.index });
+            if (!indexExists) {
+                await this.client.indices.create({ index: index.index });
 
-                    if (index.mapping) {
-                        const mappingConfig: PutMappings = {
-                            index: index.index,
-                            type: index.index,
-                            include_type_name: true,
-                            body: {
-                                properties: index.mapping
-                            },
-                        };
+                const mappingConfig: PutMappings = {
+                    index: index.index,
+                    type: index.index,
+                    include_type_name: true,
+                    body: {
+                        properties: index.mapping
+                    },
+                };
 
-                        await this.client.indices.putMapping(mappingConfig);
-                    }
-                }
+                await this.client.indices.putMapping(mappingConfig);
             }
         }
+    }
+
+    private getIndicesConfig(): IndexConfig[] {
+        return [
+            {
+                index: UserRepository.index,
+                mapping: UserRepository.mapping
+            },
+            {
+                index: PostRepository.index,
+                mapping: PostRepository.mapping
+            }
+        ];
     }
 }
 

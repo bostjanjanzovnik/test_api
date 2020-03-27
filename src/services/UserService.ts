@@ -63,12 +63,6 @@ class UserService {
     }
 
     async delete(id: string): Promise<void> {
-        let user = await this.get(id);
-
-        if (!user) {
-            throw new HandledError(ErrorType.ResourceNotFound, 'User not found.', 404);
-        }
-
         try {
             return UserRepository.delete(id);
         } catch (e) {
