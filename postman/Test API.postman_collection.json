@@ -1,0 +1,545 @@
+{
+	"info": {
+		"_postman_id": "8ab4376f-3da9-4089-9869-4ad5c305af63",
+		"name": "Test API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Get all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/v1/users",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get all",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/v1/users",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1062"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"426-oYCtFkEL8MHdk697x1jvhhz8mqY\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 27 Mar 2020 21:32:00 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": \"7ac84860-532f-41e0-8020-525516c5fd7a\",\n        \"name\": \"Dolor\",\n        \"surname\": \"Sit Amet\",\n        \"dateOfBirth\": \"1990-01-01\",\n        \"createdOn\": \"2020-03-27T12:00:34.940Z\"\n    },\n    {\n        \"id\": \"65c78453-b649-48ba-b08d-afeb06a2ef5b\",\n        \"name\": \"Dolor2\",\n        \"surname\": \"Sit Amet2\",\n        \"dateOfBirth\": \"1990-01-01\",\n        \"createdOn\": \"2020-03-27T12:24:58.391Z\"\n    },\n    {\n        \"id\": \"61946533-2e85-4a38-b89e-d5f3eb4e61e9\",\n        \"name\": \"Dolor3\",\n        \"surname\": \"Sit Amet3\",\n        \"dateOfBirth\": \"1990-01-01\",\n        \"createdOn\": \"2020-03-27T12:55:10.319Z\"\n    },\n    {\n        \"id\": \"f9b73ef6-f77c-433d-865f-afec446e542b\",\n        \"name\": \"Dolor4\",\n        \"surname\": \"Sit Amet4\",\n        \"dateOfBirth\": \"1990-01-02\",\n        \"createdOn\": \"2020-03-27T20:56:51.221Z\"\n    },\n    {\n        \"id\": \"061ee023-aadc-4e12-a2da-64e7cce47e6f\",\n        \"name\": \"Dolor4\",\n        \"surname\": \"Sit Amet4\",\n        \"dateOfBirth\": \"1990-01-02\",\n        \"createdOn\": \"2020-03-27T21:18:52.257Z\"\n    },\n    {\n        \"id\": \"3df54369-a3c9-42dd-bd90-613bc5ed19aa\",\n        \"name\": \"Lorem\",\n        \"surname\": \"Ipsum\",\n        \"dateOfBirth\": \"2020-03-27T21:18:52.257Z\",\n        \"createdOn\": \"2020-03-27T21:28:29.318Z\"\n    },\n    {\n        \"id\": \"7f373da3-0020-4914-82f0-b6ffba56019d\",\n        \"name\": \"Dolor\",\n        \"surname\": \"Sit\",\n        \"dateOfBirth\": \"1990-01-01\",\n        \"createdOn\": \"2020-03-27T12:00:46.193Z\",\n        \"posts\": []\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Get one",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/v1/users/:id",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "7ac84860-532f-41e0-8020-525516c5fd7a"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get one",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/v1/users/7ac84860-532f-41e0-8020-525516c5fd7a",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										"7ac84860-532f-41e0-8020-525516c5fd7a"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "692"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2b4-YC+AJNEg4fQRrfrKONvEDLdaoYc\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 27 Mar 2020 21:32:43 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"7ac84860-532f-41e0-8020-525516c5fd7a\",\n    \"name\": \"Dolor\",\n    \"surname\": \"Sit Amet\",\n    \"dateOfBirth\": \"1990-01-01\",\n    \"createdOn\": \"2020-03-27T12:00:34.940Z\",\n    \"posts\": [\n        {\n            \"id\": \"7bc3f4ae-1b00-4e83-b3e1-ae5af1138407\",\n            \"userId\": \"7ac84860-532f-41e0-8020-525516c5fd7a\",\n            \"title\": \"Lorem Ipsum\",\n            \"content\": \"Dolor Sit\",\n            \"createdOn\": \"2020-03-27T14:31:46.063Z\"\n        },\n        {\n            \"id\": \"5df5beeb-63f4-440b-a141-93d437e56f9f\",\n            \"userId\": \"7ac84860-532f-41e0-8020-525516c5fd7a\",\n            \"title\": \"Lorem Ipsum1\",\n            \"content\": \"Dolor Sit1\",\n            \"createdOn\": \"2020-03-27T14:35:30.004Z\"\n        },\n        {\n            \"id\": \"dad1605d-77ba-4b91-a998-1c30e94e72f1\",\n            \"userId\": \"7ac84860-532f-41e0-8020-525516c5fd7a\",\n            \"title\": \"Lorem Ipsum2\",\n            \"content\": \"Dolor Sit2\",\n            \"createdOn\": \"2020-03-27T20:58:13.275Z\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Lorem\",\n\t\"surname\": \"Ipsum\",\n\t\"dateOfBirth\": \"2020-03-27T21:18:52.257Z\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v1/users",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"name\": \"Lorem\",\n\t\"surname\": \"Ipsum\",\n\t\"dateOfBirth\": \"2020-03-27T21:18:52.257Z\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/v1/users",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "158"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"9e-bJwKHLe5suRVW5jaLVLYyaRlNcQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 27 Mar 2020 21:33:16 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"a5079346-da27-4b33-ba73-3f93fe511b4e\",\n    \"name\": \"Lorem\",\n    \"surname\": \"Ipsum\",\n    \"dateOfBirth\": \"2020-03-27T21:18:52.257Z\",\n    \"createdOn\": \"2020-03-27T21:33:15.623Z\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Dolor\",\n\t\"surname\": \"Sit\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v1/users/:id",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "7f373da3-0020-4914-82f0-b6ffba56019d"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"name\": \"Dolor\",\n\t\"surname\": \"Sit\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/v1/users/7f373da3-0020-4914-82f0-b6ffba56019d",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										"7f373da3-0020-4914-82f0-b6ffba56019d"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "153"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"99-FCg2DUEVR073yi/vXQK4bnJIcOM\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 27 Mar 2020 21:33:46 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"7f373da3-0020-4914-82f0-b6ffba56019d\",\n    \"name\": \"Dolor\",\n    \"surname\": \"Sit\",\n    \"dateOfBirth\": \"1990-01-01\",\n    \"createdOn\": \"2020-03-27T12:00:46.193Z\",\n    \"posts\": []\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/v1/users/:id",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "430a2c07-d78b-4561-8aea-8ed6fa9ddf9e"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Post",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"userId\": \"7ac84860-532f-41e0-8020-525516c5fd7a\",\n\t\"title\": \"Lorem Ipsum\",\n\t\"content\": \"Dolor Sit\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v1/posts",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"posts"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"userId\": \"7ac84860-532f-41e0-8020-525516c5fd7a\",\n\t\"title\": \"Lorem Ipsum\",\n\t\"content\": \"Dolor Sit\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/v1/posts",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"posts"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "176"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"b0-Ln+9o5o2A7dMRdf+ILPWtwlksTA\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 27 Mar 2020 21:34:26 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"5b8aa701-5750-4751-8511-b6adb3d28ac6\",\n    \"userId\": \"7ac84860-532f-41e0-8020-525516c5fd7a\",\n    \"title\": \"Lorem Ipsum\",\n    \"content\": \"Dolor Sit\",\n    \"createdOn\": \"2020-03-27T21:34:26.359Z\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/v1/posts/:id",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"posts",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "13f43f54-f87b-4337-99ed-48973b24d28d"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
